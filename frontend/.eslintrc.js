@@ -17,19 +17,20 @@ module.exports = {
         paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
-    },
+    }
   },
   env: {
     browser: true,
-    amd: true,
-    node: true,
+    es2021: true
   },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended', // Make sure this is always the last element in the array.
+    'plugin:sonarjs/recommended',
+    'plugin:promise/recommended',
+    'plugin:prettier/recommended',
   ],
   plugins: ['simple-import-sort', 'prettier'],
   rules: {
@@ -37,7 +38,6 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/accessible-emoji': 'off',
     'react/prop-types': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     'jsx-a11y/anchor-is-valid': [
