@@ -17,11 +17,12 @@ module.exports = {
         paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
-    }
+    },
   },
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    node: true,
   },
   extends: [
     'eslint:recommended',
