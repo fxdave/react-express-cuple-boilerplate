@@ -8,10 +8,10 @@ COPY ./frontend /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 # install and cache dependencies
-RUN yarn
+RUN npm install 
 
 #build the project for production
-RUN yarn build
+RUN npm build
 
 # set up production environment
 FROM nginx:alpine
