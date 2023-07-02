@@ -1,0 +1,20 @@
+FROM node:alpine as build
+
+# set working directory
+WORKDIR /app
+# copy everything to /app directory
+COPY ./frontend /app
+# add the node_modules folder to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install and cache dependencies
+RUN npm install 
+
+#build the project for production
+RUN npm build
+
+# set up production environment
+FROM nginx:alpine
+# copy the build folder from react to the root of nginx (www)
+COPY --from=build /app/dist /usr/share/nginx/html
+
