@@ -4,7 +4,7 @@ services:
   frontend:
     image: node:latest
     ports:
-      - 5000:5000
+      - 3000:3000
     volumes:
       - ./:/app
     working_dir: /app/frontend
@@ -15,7 +15,7 @@ services:
   backend:
     image: node:latest
     ports:
-      - 8000:8000
+      - 3001:3001
     volumes:
       - ./:/app
     working_dir: /app/backend

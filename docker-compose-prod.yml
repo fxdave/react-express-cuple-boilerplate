@@ -8,4 +8,4 @@ services:
       dockerfile:
         ./frontend/Dockerfile-prod
     ports:
-      - "5000:80"
+      - "3000:80"
