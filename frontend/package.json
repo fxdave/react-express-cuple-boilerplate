@@ -2,7 +2,7 @@
   "name": "vite-reactts-eslint-prettier",
   "version": "0.0.0",
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "lint": "eslint ./src --ext .jsx,.js,.ts,.tsx",
@@ -15,11 +15,13 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/node": "^20.3.3",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "@vitejs/plugin-react": "^4.0.1",
+    "dotenv": "^16.3.1",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",

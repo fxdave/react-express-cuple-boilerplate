@@ -5,7 +5,7 @@ dotenv.config();
 
 const app: Express = express();
 // TODO env
-const port = 8000;
+const port = 3001;
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");

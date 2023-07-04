@@ -1,26 +1,27 @@
-import { resolve } from 'node:path';
+import 'dotenv/config';
 
 import react from '@vitejs/plugin-react';
+import path from 'path';
 import { defineConfig } from 'vite';
 import viteCompression from 'vite-plugin-compression';
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(() => {
   return {
     resolve: {
       alias: [
         {
           find: '@',
-          replacement: resolve(__dirname, 'src'),
+          replacement: path.resolve(__dirname, 'src'),
         },
       ],
     },
     plugins: [react(), viteCompression()],
     server: {
-      port: 5000,
-      porxy: {
-        // TODO: Add proxy
+      host: '0.0.0.0',
+      port: 3000,
+      proxy: {
         '/api': {
-          target: 'http://jsonplaceholder.typicode.com',
+          target: process.env.BACKEND_URL,
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
         },
