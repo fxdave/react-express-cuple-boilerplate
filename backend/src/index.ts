@@ -1,15 +1,32 @@
-import express, { Express, Request, Response } from "express";
+import express from "express";
 import dotenv from "dotenv";
+import { createBuilder, success, initRpc } from "@cuple/server";
+import { z } from "zod";
 
 dotenv.config();
 
-const app: Express = express();
-// TODO env
+const app = express();
 const port = 3001;
+const builder = createBuilder(app)
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
-});
+const routes = {
+  sayHi: builder
+    .querySchema(z.object({
+      name: z.string().min(2)
+    }))
+    .get(async ({ data }) => {
+      return success({
+        message: `Hi ${data.query.name}!`
+      })
+    })
+}
+
+initRpc(app, {
+  path: "/rpc",
+  routes
+})
+
+export type Routes = typeof routes;
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
