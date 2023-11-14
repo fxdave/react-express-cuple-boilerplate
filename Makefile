@@ -5,4 +5,5 @@ install:
 	docker-compose run backend npm i
 start:
 	docker-compose up -d
-	
+stop:
+	docker-compose down
