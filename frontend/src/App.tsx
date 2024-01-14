@@ -7,21 +7,28 @@ function App() {
   const [message, setMessage] = useState('');
 
   async function sendWelcomeRequest() {
-    const response = await client.sayHi.get({ query: { name } });
-    setMessage(response.message);
+    const result = await client.sayHi.get({
+      query: { name },
+    });
+    setMessage(result.message);
   }
 
   return (
-    <div>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        sendWelcomeRequest();
+      }}
+    >
       <h1>{message}</h1>
       <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        placeholder="name"
+        placeholder="Type your nickname here"
       />
-      <button onClick={sendWelcomeRequest}>Welcome</button>
-    </div>
+      <button>Welcome</button>
+    </form>
   );
 }
 

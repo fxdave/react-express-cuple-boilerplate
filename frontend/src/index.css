@@ -1,9 +1,63 @@
 body {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  background: #1f1f1f;
+  color: #fff;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+
+  font-family: 'Fira Code', monospace;
+}
+
+#root {
+  padding: 100px;
+  margin: auto;
+  width: 400px;
+}
+
+input,
+button {
+  background: #ccc;
+  border: 0;
+  padding: 1em 1em;
+}
+
+h1 {
+  color: #4fc1ff;
+}
+
+input {
+  border-radius: 3px 0 0 3px;
+  width: 18em;
+}
+
+input:active,
+input:focus {
+  border: none;
+  outline: none;
+}
+
+button {
+  background: #444;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #333;
+}
+
+button:active {
+  background: #252525;
 }
 
 code {

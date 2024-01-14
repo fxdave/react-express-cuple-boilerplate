@@ -29,5 +29,5 @@ initRpc(app, {
 export type Routes = typeof routes;
 
 app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+  console.log(`Server is running at http://0.0.0.0:${port}`);
 });
