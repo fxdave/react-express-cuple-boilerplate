@@ -1,4 +1,4 @@
-# React Express Boilerplate
+# React &middot; Express &middot; Cuple Boilerplate
 
 # Getting started
 (rootless docker is recommended)
