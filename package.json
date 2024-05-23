@@ -1,17 +1,17 @@
 {
-    "name": "cuple-demo",
-    "version": "1.0.0",
-    "workspaces": [
-        "./backend",
-        "./frontend"
-    ],
-    "scripts": {
-        "start": "npm run install && concurrently 'npm:start:frontend' 'npm:start:backend'",
-        "install": "echo 'API_URL=http://localhost:3001' > ./frontend/.env",
-        "start:frontend": "cd frontend && npm run dev",
-        "start:backend": "cd backend && npm run dev"
-    },
-    "devDependencies": {
-        "concurrently": "^8.2.2"
-    }
+  "name": "cuple-demo",
+  "version": "1.0.0",
+  "workspaces": [
+    "./backend",
+    "./frontend"
+  ],
+  "scripts": {
+    "start": "npm run install && concurrently 'npm:start:backend' 'npm:start:frontend'",
+    "install": "echo 'API_URL=http://localhost:3001' > ./frontend/.env",
+    "start:frontend": "sleep 5; cd frontend && npm run dev",
+    "start:backend": "cd backend && npm run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
 }
