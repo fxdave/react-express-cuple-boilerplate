@@ -6,12 +6,14 @@
     "./frontend"
   ],
   "scripts": {
-    "start": "npm run install && concurrently 'npm:start:backend' 'npm:start:frontend'",
+    "start": "npm run install && concurrently 'npm:start:backend' 'npm:start:frontend' 'npm:start:open'",
     "install": "echo 'API_URL=http://localhost:3001' > ./frontend/.env",
-    "start:frontend": "sleep 5; cd frontend && npm run dev",
-    "start:backend": "cd backend && npm run dev"
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && npm run dev",
+    "start:open": "wait-port localhost:3000 && open http://localhost:3000"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "wait-port": "1.1.0"
   }
 }
