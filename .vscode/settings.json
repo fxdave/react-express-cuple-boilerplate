@@ -1,3 +1,6 @@
 {
-  "WhiteSource Advise.Diff.BaseBranch": "main"
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  }
 }

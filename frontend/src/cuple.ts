@@ -1,7 +1,7 @@
-import { createClient } from '@cuple/client';
+import { createClient } from "@cuple/client";
 
-import { Routes } from '../../backend/src/index';
+import type { Routes } from "../../backend/src/index";
 
 export const client = createClient<Routes>({
-  path: '/api/rpc',
+  path: "/api/rpc",
 });

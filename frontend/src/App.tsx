@@ -1,15 +1,16 @@
-import { useState } from 'react';
-
-import { client } from './cuple';
+import { useState } from "react";
+import { client } from "./cuple";
 
 function App() {
-  const [name, setName] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+
+  const [message, setMessage] = useState("");
 
   async function sendWelcomeRequest() {
     const result = await client.sayHi.get({
       query: { name },
     });
+
     setMessage(result.message);
   }
 
@@ -27,7 +28,7 @@ function App() {
         onChange={(e) => setName(e.target.value)}
         placeholder="Type your nickname here"
       />
-      <button>Welcome</button>
+      <button type="submit">Welcome</button>
     </form>
   );
 }
