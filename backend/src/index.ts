@@ -1,6 +1,6 @@
-import express from "express";
+import { createBuilder, initRpc, success } from "@cuple/server";
 import dotenv from "dotenv";
-import { createBuilder, success, initRpc } from "@cuple/server";
+import express from "express";
 import { z } from "zod";
 
 dotenv.config();
@@ -13,7 +13,10 @@ const routes = {
   sayHi: builder
     .querySchema(
       z.object({
-        name: z.string().min(2),
+        name: z
+          .string()
+          .min(1, { error: "How can I call you?" })
+          .min(2, { error: "Are you?" }),
       }),
     )
     .get(async ({ data }) => {
