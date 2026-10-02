@@ -1,6 +1,9 @@
 {
+  "biome.lsp.bin": "frontend/node_modules/.bin/biome",
+  "editor.defaultFormatter": "biomejs.biome",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": "explicit"
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   }
 }
