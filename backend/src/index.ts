@@ -20,6 +20,7 @@ const routes = {
       }),
     )
     .get(async ({ data }) => {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       return success({
         message: `Hi ${data.query.name}!`,
       });
