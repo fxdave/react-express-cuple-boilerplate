@@ -11,8 +11,8 @@
     "format": "biome format --write ./src"
   },
   "dependencies": {
-    "@cuple/client": "^2.3.1",
-    "@cuple/react": "^2.3.1",
+    "@cuple/client": "^2.4.0",
+    "@cuple/react": "^2.4.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },
